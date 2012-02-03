@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load taggit_extras %}
+
+{% block meta_title %}Accueil{% endblock %}
+
+{% block extra_head %}
+<script type="text/javascript">
+    json_data = "/skosxl/concept_tree/{{scheme_id}}/"
+</script>
+<script type="text/javascript" src="/static/d3.js"></script>
+<script type="text/javascript" src="/static/d3.layout.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/d3.tree.css" />
+{% endblock %}
+
+{% block document %}
+  
+  {% block content %}
+  
+                <div id="chart" class="gallery"></div>
+                <script type="text/javascript" src="/static/d3.tree.js"></script>
+                
+  
+     
+
+              <h4>Tags: </h4>
+              
+              <ul id="tags" class="indextags">
+              {% get_taglist as all_tags %}
+              {% for tag in all_tags %}
+                  <li class="tag">
+                      <a href="{{ tag.get_absolute_url }}">{{tag}} ({{tag.num_times}})</a>
+                  </li>
+              {% endfor %}
+              </ul>
+
+          
+  {% endblock %}
+  
+  
+  
+{% endblock %}

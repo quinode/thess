@@ -1,0 +1,6 @@
+/* @override http://localhost:8000/static/css/thess_style.css */
+
+#chart svg {
+	height: 800px;
+	margin-top: -150px;
+}

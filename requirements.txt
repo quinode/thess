@@ -1,0 +1,2 @@
+git+git://github.com/twidi/django-extended-choices.git
+git+git://github.com/flupke/django-taggit-templatetags.git
